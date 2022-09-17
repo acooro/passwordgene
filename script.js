@@ -17,7 +17,10 @@ generateBtn.addEventListener("click", writePassword);
 
 // Global variables
 var numOfCharacters;
-var useLowerCaseLtrs;
+var useLowerCaseLtrs = ["abcdefghijklmnopqrstuvwyxz"]
+var useUpperCaseLtrs = ["ABCDEFGHIJKLMNOPQRSTUVWYXZ"]
+var useNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+var useSpecialChar = ["!@#$%^&*"]
 
 // ask the user how many characters should be in the password
 function howManyCharacters(){
@@ -25,8 +28,22 @@ function howManyCharacters(){
 }
 
 function useLowerCase(){
-  useLowerCaseLtrs = confirm("Do you want lower case letters in the password?");
+  useLowerCaseLtrs = confirm("Do you want to used lower case letters in the password?");
   console.log(useLowerCaseLtrs)
+}
+
+function useUpperCase(){
+  useUpperCaseLtrs = confirm("Do you want to used upper case letters in the password?")
+  console.log (useUpperCaseLtrs) 
+}
+
+function useSpecChar(){
+  useSpecialChar = confirm("Do you want to use special characters?")
+  console.log (useSpecialChar)
+}
+function useNum(){
+  useNumber = confirm ("Do you want to use numbers?")
+  console.log (useNumber)
 }
 
 
@@ -34,6 +51,9 @@ function generatePassword() {
   console.log("start here");
   howManyCharacters();
   useLowerCase();
+  useUpperCase();
+  useSpecChar();
+  useNum();
 
 
 
