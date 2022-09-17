@@ -16,34 +16,35 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // Global variables
-var numOfCharacters;
+var numOfCharacters = ""
 var useLowerCaseLtrs = ["abcdefghijklmnopqrstuvwyxz"]
 var useUpperCaseLtrs = ["ABCDEFGHIJKLMNOPQRSTUVWYXZ"]
 var useNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var useSpecialChar = ["!@#$%^&*"]
 
-// ask the user how many characters should be in the password
-function howManyCharacters(){
-  numOfCharacters = parseInt( prompt("How many characters?") );
-}
+function howManyCharacters() {
+  numOfCharacters = parseInt( prompt("How many characters?"));
 
-function useLowerCase(){
+  while(numOfCharacters <=7 || numOfCharacters >= 190){
+    alert("Password can only be between 7-190")
+    numOfCharacters = parseInt( prompt("How many characters?"));
+  }
+
+useLowerCaseLtrs = confirm("Do you want to used lower case letters in the password?");
+
+useUpperCaseLtrs = confirm("Do you want to used upper case letters in the password?")
+
+useSpecialChar = confirm("Do you want to use special characters?")
+
+useNumber = confirm ("Do you want to use numbers?")
+
+while(useLowerCaseLtrs === false && useUpperCaseLtrs === false && useSpecialChar === false && useNumber === false) {
+  alert ("You have to pick at least one");
   useLowerCaseLtrs = confirm("Do you want to used lower case letters in the password?");
-  console.log(useLowerCaseLtrs)
-}
-
-function useUpperCase(){
-  useUpperCaseLtrs = confirm("Do you want to used upper case letters in the password?")
-  console.log (useUpperCaseLtrs) 
-}
-
-function useSpecChar(){
-  useSpecialChar = confirm("Do you want to use special characters?")
-  console.log (useSpecialChar)
-}
-function useNum(){
+  useUpperCaseLtrs = confirm("Do you want to used upper case letters in the password?");
+  useSpecialChar = confirm("Do you want to use special characters?");
   useNumber = confirm ("Do you want to use numbers?")
-  console.log (useNumber)
+  }
 }
 
 
@@ -57,5 +58,5 @@ function generatePassword() {
 
 
 
-  return "finalpassword"
+  return "password"
 }
